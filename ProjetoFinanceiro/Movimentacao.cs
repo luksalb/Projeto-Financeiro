@@ -8,8 +8,12 @@ namespace ProjetoFinanceiro
 {
     public class Movimentacao
     {
-        public string Tipo { get; set; }
+        //public string Deposito { get; set; }
+
+        //public string Saque { get; set; }
+        public string? Tipo { get; set; }
 
         public decimal Valor { get; set; }
+
     }
 }

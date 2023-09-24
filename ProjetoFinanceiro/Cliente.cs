@@ -19,7 +19,6 @@ namespace ProjetoFinanceiro
 
         public Cliente()
         {
-            Movimentacoes = new List<Movimentacao>();
         }
 
         public Cliente(string codigo, string nome) : this()
@@ -35,7 +34,7 @@ namespace ProjetoFinanceiro
             {
                 decimal valorMenosTaxa = DescontarTaxa(valor);
                 Saldo = Saldo - valor;
-                AdicionarMovimentacao("SAQUE", valorMenosTaxa);
+            //    AdicionarMovimentacao("SAQUE", valorMenosTaxa);
                 Console.WriteLine($"Saque realizado com sucesso. Saldo: {Saldo}");
             }
             else
@@ -48,17 +47,17 @@ namespace ProjetoFinanceiro
             {
                 decimal valorMenosTaxa = DescontarTaxa(valor);
                 Saldo += valorMenosTaxa;
-                AdicionarMovimentacao("DEPÓSITO", valorMenosTaxa);
+             //   AdicionarMovimentacao("DEPÓSITO", valorMenosTaxa);
                 Console.WriteLine($"Depósito realizado com sucesso. Saldo: {Saldo}");
             }
             else
                 Console.WriteLine("Valor insuficiente.");
         }
 
-        public void AdicionarMovimentacao(string tipo, decimal valor)
-        {
-            Movimentacoes.Add(new Movimentacao(tipo, DescontarTaxa(valor)));
-        }
+        //public void AdicionarMovimentacao(string tipo, decimal valor)
+        //{
+        //    Movimentacoes.Add(new Movimentacao(tipo, DescontarTaxa(valor)));
+        //}
 
         public virtual decimal DescontarTaxa(decimal valor)
         {
